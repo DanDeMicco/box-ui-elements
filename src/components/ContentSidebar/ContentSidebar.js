@@ -1365,7 +1365,15 @@ class ContentSidebar extends PureComponent<Props, State> {
                                     onDescriptionChange: this.onDescriptionChange,
                                     ...detailsSidebarProps
                                 }}
-                                activitySidebarProps={activitySidebarProps}
+                                activitySidebarProps={{
+                                    ...activitySidebarProps,
+                                    onCommentCreate: this.createComment,
+                                    onCommentDelete: this.deleteComment,
+                                    onTaskCreate: this.createTask,
+                                    onTaskDelete: this.deleteTask,
+                                    onTaskUpdate: this.updateTask,
+                                    onTaskAssignmentUpdate: this.updateTaskAssignment
+                                }}
                                 versions={versions}
                                 getPreviewer={getPreviewer}
                                 hasSkills={hasSkills}
@@ -1383,12 +1391,6 @@ class ContentSidebar extends PureComponent<Props, State> {
                                 commentsError={commentsError}
                                 currentUser={currentUser}
                                 currentUserError={currentUserError}
-                                onCommentCreate={this.createComment}
-                                onCommentDelete={this.deleteComment}
-                                onTaskCreate={this.createTask}
-                                onTaskDelete={this.deleteTask}
-                                onTaskUpdate={this.updateTask}
-                                onTaskAssignmentUpdate={this.updateTaskAssignment}
                                 getApproverWithQuery={this.getApproverWithQuery}
                                 getMentionWithQuery={this.getMentionWithQuery}
                                 approverSelectorContacts={approverSelectorContacts}
