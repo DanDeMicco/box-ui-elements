@@ -163,7 +163,8 @@ class File extends Item {
         if (isCached && missingFields.length === 0) {
             successCallback(file);
             missingFields = options.fields || [];
-            if (!options.refreshCache) {
+            // bail out early if there is no need to refresh the cache
+            if (!options.refreshCache || options.forceFetch) {
                 return;
             }
         }

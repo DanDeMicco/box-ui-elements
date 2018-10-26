@@ -459,6 +459,7 @@ describe('components/ContentSidebar/ContentSidebar', () => {
                 {
                     forceFetch: true,
                     fields: SIDEBAR_FIELDS_TO_FETCH,
+                    refreshCache: true,
                 },
             );
         });
@@ -473,6 +474,7 @@ describe('components/ContentSidebar/ContentSidebar', () => {
                 instance.errorCallback,
                 {
                     fields: SIDEBAR_FIELDS_TO_FETCH,
+                    refreshCache: true,
                 },
             );
         });

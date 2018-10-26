@@ -339,6 +339,7 @@ class ContentSidebar extends PureComponent<Props, State> {
                     {
                         ...fetchOptions,
                         fields: SIDEBAR_FIELDS_TO_FETCH,
+                        refreshCache: true,
                     },
                 );
         }

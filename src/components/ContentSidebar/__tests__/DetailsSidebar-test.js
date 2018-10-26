@@ -219,7 +219,6 @@ describe('components/ContentSidebar/DetailsSidebar', () => {
                 instance.classifiationChangeErrorCallback,
                 {
                     forceFetch: true,
-                    updateCache: true,
                     fields: [FIELD_METADATA_CLASSIFICATION],
                 },
             );

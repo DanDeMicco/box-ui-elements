@@ -240,7 +240,6 @@ class DetailsSidebar extends React.PureComponent<Props, State> {
             this.classifiationChangeErrorCallback,
             {
                 forceFetch: true,
-                updateCache: true,
                 fields: [FIELD_METADATA_CLASSIFICATION],
             },
         );

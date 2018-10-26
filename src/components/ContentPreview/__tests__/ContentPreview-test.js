@@ -296,6 +296,7 @@ describe('components/ContentPreview/ContentPreview', () => {
                 instance.fetchFileErrorCallback,
                 {
                     fields: PREVIEW_FIELDS_TO_FETCH,
+                    refreshCache: true,
                 },
             );
         });
@@ -311,6 +312,7 @@ describe('components/ContentPreview/ContentPreview', () => {
                 instance.fetchFileErrorCallback,
                 {
                     fields: PREVIEW_FIELDS_TO_FETCH,
+                    refreshCache: true,
                 },
             );
         });

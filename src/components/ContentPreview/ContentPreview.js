@@ -808,6 +808,7 @@ class ContentPreview extends PureComponent<Props, State> {
                 {
                     ...fetchOptions,
                     fields: PREVIEW_FIELDS_TO_FETCH,
+                    refreshCache: true,
                 },
             );
     }

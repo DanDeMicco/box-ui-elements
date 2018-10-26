@@ -543,5 +543,31 @@ describe('api/File', () => {
                 },
             });
         });
+
+        test('should not make a second call to refresh the cache if both refreshCache and forceFetch are set', async () => {
+            cache.set('key', { id: '123' });
+            fields.findMissingProperties = jest.fn().mockReturnValueOnce([]);
+            fields.fillMissingProperties = jest
+                .fn()
+                .mockReturnValueOnce({ id: 'new', foo: 'bar', missing: null });
+            file.options = { cache };
+            file.getCache = jest.fn().mockReturnValueOnce(cache);
+            file.getCacheKey = jest.fn().mockReturnValueOnce('key');
+            file.xhr = {
+                get: jest
+                    .fn()
+                    .mockReturnValueOnce(
+                        Promise.resolve({ data: { id: 'new', foo: 'bar' } }),
+                    ),
+            };
+
+            const success = jest.fn();
+
+            await file.getFile('id', success, 'error', {
+                forceFetch: true,
+                refreshCache: true,
+            });
+            expect(success).toHaveBeenCalledTimes(1);
+        });
     });
 });
