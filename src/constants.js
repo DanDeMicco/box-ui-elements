@@ -200,6 +200,7 @@ export const ERROR_CODE_FETCH_EDITORS = 'fetch_editors_error';
 export const ERROR_CODE_FETCH_ACCESS_STATS = 'fetch_access_stats_error';
 export const ERROR_CODE_FETCH_SKILLS = 'fetch_skills_error';
 export const ERROR_CODE_FETCH_RECENTS = 'fetch_recents_error';
+export const ERROR_CODE_FETCH_CURRENT_VERSION = 'fetch_current_version_error';
 export const ERROR_CODE_EXECUTE_INTEGRATION = 'execute_integrations_error';
 export const ERROR_CODE_CREATE_COMMENT = 'create_comment_error';
 export const ERROR_CODE_CREATE_TASK = 'create_task_error';

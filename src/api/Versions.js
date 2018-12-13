@@ -5,7 +5,12 @@
  */
 
 import OffsetBasedAPI from './OffsetBasedAPI';
-import { ERROR_CODE_FETCH_VERSIONS, DEFAULT_FETCH_START, DEFAULT_FETCH_END } from '../constants';
+import {
+    ERROR_CODE_FETCH_VERSIONS,
+    DEFAULT_FETCH_START,
+    DEFAULT_FETCH_END,
+    ERROR_CODE_FETCH_CURRENT_VERSION,
+} from '../constants';
 import { VERSIONS_FIELDS_TO_FETCH } from '../util/fields';
 
 const ACTION = {
@@ -72,6 +77,36 @@ class Versions extends OffsetBasedAPI {
     ): void {
         this.errorCode = ERROR_CODE_FETCH_VERSIONS;
         this.offsetGet(fileId, successCallback, errorCallback, offset, limit, fields, shouldFetchAll);
+    }
+
+    /**
+     * API for fetching the current version of a file
+     *
+     * @param {string} fileId - a box file id
+     * @param {Function} successCallback - the success callback
+     * @param {Function} errorCallback - the error callback
+     * @param {Array} fields - the fields to fetch
+     * @returns {void}
+     */
+    getCurrentVersion(
+        fileId: string,
+        successCallback: Function,
+        errorCallback: ElementsErrorCallback,
+        requestData: Object = {
+            params: {
+                fields: VERSIONS_FIELDS_TO_FETCH.toString(),
+            },
+        },
+    ): void {
+        this.errorCode = ERROR_CODE_FETCH_CURRENT_VERSION;
+        const url = `${this.getUrl(fileId)}/current`;
+        this.get({
+            id: fileId,
+            successCallback,
+            errorCallback,
+            requestData,
+            url,
+        });
     }
 }
 
