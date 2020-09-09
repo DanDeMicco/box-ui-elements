@@ -9,5 +9,6 @@
         }
     },
     "files": [".storybook/typings.d.ts"],
-    "include": ["src/**/*.ts", "src/**/*.tsx", "examples/src/**.tsx", "types.ts"]
+    "include": ["src/**/*.ts", "src/**/*.tsx", "examples/src/**.tsx", "types.ts"],
+    "exclude": ["src/components/category-selector/*"]
 }

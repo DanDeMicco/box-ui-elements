@@ -1,0 +1,54 @@
+@import '../../styles/variables';
+
+.bdl-CategorySelector {
+    display: flex;
+    height: 8 * $bdl-grid-unit;
+
+    .bdl-CategorySelector-categoryLinks {
+        height: 8 * $bdl-grid-unit;
+        overflow: hidden;
+    }
+
+    .bdl-CategorySelector-categoryPill {
+        margin-right: 2 * $bdl-grid-unit;
+    }
+
+    .bdl-CategorySelector-categoryPill,
+    .bdl-CategorySelector-categoryMoreLabel {
+        display: inline-block;
+        height: 8 * $bdl-grid-unit;
+        padding: 2 * $bdl-grid-unit 4 * $bdl-grid-unit;
+        color: $bdl-gray-80;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 4 * $bdl-grid-unit;
+        letter-spacing: .3px;
+        white-space: nowrap;
+        text-align: center;
+        border-radius: 4 * $bdl-grid-unit;
+        outline: none;
+        cursor: pointer;
+
+        &:hover,
+        &:focus {
+            padding: 2 * $bdl-grid-unit 4 * $bdl-grid-unit;
+            font-weight: bold;
+            background-color: $bdl-gray-05;
+        }
+
+        &.is-selected {
+            color: #fff;
+            background-color: $bdl-box-blue;
+
+            .fill-color {
+                fill: #fff;
+            }
+        }
+    }
+
+    .bdl-CategorySelector-categoryMore {
+        &.is-hidden {
+            display: none;
+        }
+    }
+}
